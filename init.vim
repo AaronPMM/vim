@@ -17,7 +17,7 @@ set tabstop=4
 set softtabstop=4
 " 设置每一级缩进的长度
 set shiftwidth=4
-" 单行最大长度 or set tw = 200
+" 单行最大长度 or set tw = 400
 " set textwidth=300
 
 syntax on
@@ -97,7 +97,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " 代码补全、静态检测、函数跳转
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" 文件/函数/变量列表查找 install universal-ctags, need ctags application
+" 文件/函数/变量列表查找 install universal-ctags, need ctags applicatio" 
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 " ctags 展示当前的文件的一些函数
 Plug 'liuchengxu/vista.vim'
@@ -110,6 +110,8 @@ Plug 'iamcco/markdown-preview.nvim', {'do': 'cd app & yarn install'}
 " github copilot: https://docs.github.com/en/copilot/getting-started-with-github-copilot?tool=vimneovim
 " https://github.com/github/copilot.vim.git
 Plug 'github/copilot.vim'
+" 文件图标
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
@@ -510,4 +512,14 @@ let g:mkdp_browser = '' "指定浏览器, 默认会跟随系统浏览器
 let g:mkdp_port = '' " 指定端口, 默认随机端口
 let g:mkdp_page_title = ' **${name}** ' "指定浏览器窗口标题, 默认为 Markdown 文件名
 
-
+" termain
+nnoremap <M-h> <c-w>h 
+nnoremap <M-j> <c-w>j 
+nnoremap <M-k> <c-w>k 
+nnoremap <M-l> <c-w>l 
+if has('nvim')
+    tnoremap <M-h> <c-\><c-n><c-w>h
+    tnoremap <M-j> <c-\><c-n><c-w>j
+    tnoremap <M-k> <c-\><c-n><c-w>k
+    tnoremap <M-l> <c-\><c-n><c-w>l
+endif
